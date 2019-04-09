@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/static/signin.css">
+    <title>PhotoBomb! Register</title>
+</head>
+<body>
+    <div id="form">
+        <img src="/gallery/camera_icon.png" alt="camera icon" width="75">
+        <h1>PhotoBomb!</h1>
+        <h3>Register:</h3>
+        <form>
+            <div class="form-group">
+                    <label for="InputFirstName"></label>
+                    <input type="fname" class="form-control" id="InputFirstName" aria-describedby="firstnameHelp" placeholder="First Name">
+            </div>
+            <div class="form-group">
+                    <label for="InputLastName"></label>
+                    <input type="lname" class="form-control" id="InputLastName" aria-describedby="lastnameHelp" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1"></label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1"></label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+        </form>
+        <a href="/templates/signin.html">Sign In</a>
+        <button onclick="window.location.href = '/templates/dashboard.html';">Register</button>
+    </div>
+       
+</body>
+</html>
