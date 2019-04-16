@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/static/signin.css">
+    <link rel="stylesheet" href="/static/profile.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>PhotoBomb! Sign In</title>
+    <title>Edit Account</title>
 </head>
 <body>
-    <div id="form">
-        <img src="static/gallery/camera_icon.png" alt="camera icon" width="75">
-        <h1>PhotoBomb!</h1>
-        <h3>Sign In:</h3>
+    <div class="container">
+        <div style=
+        <img src="static/gallery/camera_icon.png" alt="camera icon" width="75px">
+        <h1>Edit My Account</h1>
         {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
             {% if messages %}                            <!-- check if there are any messages -->
                 {% for message in messages %}            <!-- loop through the messages -->
@@ -20,13 +20,14 @@
                 {% endfor %}
             {% endif %}
         {% endwith %}
-        <form action="/login" method="POST">
-            <p>Email: <input type="text" name="email" placeholder="Enter email"></p>
-            <p>Password: <input type="password" name="password" placeholder="Password"></p>
-            <a href="/register" class="button">Create Account</a>     
-            <input type="submit" class="btn btn-dark" value="Sign In">
+        <form action="/profile" method="POST">
+            <p>First Name: <input type="text" name="fname" placeholder="{{ current_user['first_name'] }}"></p>
+            <p>Last Name: <input type="text" name="lname" placeholder="{{ current_user['last_name'] }}"></p>
+            <p>Email: <input type="text" name="email" placeholder="{{ current_user['email'] }}"></p>
+            <input type="submit" class="btn btn-dark" value="Update">
+            <a href="/dashboard" class="btn btn-outline-info">Back</a>    
+            <a href="/logout" class="btn btn-danger">Logout</a>
         </form>
     </div>
-   
 </body>
 </html>
